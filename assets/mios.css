@@ -1,0 +1,86 @@
+label{
+	color: rgb(0,0,0);
+}
+
+.color-primario-obscuro{
+	background-color:  #F57C00;
+}
+
+.color-primario{
+	background-color: #FF9800;
+}
+
+.color-primario-texto{
+	color: #FF9800;
+	font-family: 'Bangers', cursive;
+}
+
+.color-primario-claro{
+	background-color: #FFE0B2;
+}
+
+.texto-iconos{
+	color: #212121;
+}
+
+.color-resaltado{
+	background-color: #03A9F4;
+}
+
+.texto-principal{
+	color: #212121;
+}
+
+.textoSecundiario{
+	color: #727272;
+}
+
+.color-division{
+	background-color: #B6B6B6;
+}
+
+.fondo{
+	background-image: url(imagenes/callejon1.jpg);
+}
+
+.tarjeta-izquierda{
+	background-color: rgba(245,124,0,.6);
+}
+
+#segunda-fuente{
+	font-family: 'Dancing Script', cursive;
+}
+
+.tarjeta-derecha{
+	background-color: rgba(255,152,0,0.6);
+}
+
+.fuente1{
+	font-family: 'Bangers', cursive;
+}
+
+#tercera-fuente{
+	font-family: 'Lobster', cursive;
+}
+
+#slogan{
+	font-family: 'Lobster', cursive;
+	color: coral;
+	text-align: right;
+}
+
+.indicator{
+	background-color: #03A9F4;
+}
+
+.fuente2{
+	font-family: 'Dancing Script', cursive;
+}
+
+.tabs .indicator{
+	background-color: #03A9F4;
+}
+			
+.secondary-content{
+	color: #03A9F4;
+}
