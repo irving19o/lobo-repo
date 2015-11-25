@@ -25,19 +25,20 @@
 	 </div>
 	 
 	  <div class="col s6">
-	 	<?php include 'verDelito.php'?>
+	  	<br>
+	  	<br>
+	  	<br>
+	 	<?php include 'formularios/formularioDelito.php'?>
 	 </div>
 	</div>
 
-
-	<script>
-			$(document).ready(function(){
-				$(".button-collapse").sideNav();
-			})
-		</script>
-
-		<!--Import jQuery before materialize.js-->
+	<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="<?php echo(base_url());?>assets/materialize/js/materialize.min.js"></script>
-		
+		<script>
+			$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+		</script>
 	</body>
 </html>

@@ -64,7 +64,7 @@
 		</div>
 				
 		
-		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+		<script type="text/javascript" src="<?php echo(base_url());?>assets/materialize/js/materialize.min.js"></script>
 		<script>
 		  function animar(){$('h1').filter('#logo').animate({
 										  opacity: 0

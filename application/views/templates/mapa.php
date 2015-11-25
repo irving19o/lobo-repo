@@ -1,7 +1,5 @@
-
-    <div id="map" style="width: 50%; height: 100%;"></div>
-    <script type="text/javascript">
-
+ <script type="text/javascript">
+var bandera = 0;
 var map;
 function initMap() 
 		{
@@ -33,24 +31,42 @@ google.maps.event.addListener(map, "click", function (event) {
 			*/
 			
 			google.maps.event.addListener(map, "click", function (e) {
-
-				//lat and lng is available in e object
+				
+				if(bandera==1)
+					{
+						//lat and lng is available in e object
 				var latLng = e.latLng;
+						
+					var estaEsLaLatitud = e.latLng.lat();
+					var estaEsLaLongitud = e.latLng.lng();
+						
 				//alert(e.latLng.lat() + ' '+ e.latLng.lng());
 				var marcador = new google.maps.Marker({
 					position: {lat: e.latLng.lat(), lng: e.latLng.lng()},
 					map: map,
 					title: 'Ha funcionado!!!'
 				});
+						bandera=0;
+					}
 
-});
+				});
 			
 		}
 		
+		function abanderado()
+		{
+			if(bandera==0)
+				{
+					bandera=1;
+				}
+			else
+				{
+					bandera=0;
+				}
+			console.log(bandera);
+		}
 		
-
+		
+	  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2JY_QTfKQ0qltjcw4kGs8V-XmwZjXxJU&callback=initMap">
     </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2JY_QTfKQ0qltjcw4kGs8V-XmwZjXxJU&callback=initMap">
-    </script>
-  

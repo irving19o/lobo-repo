@@ -4,7 +4,7 @@
 	   <!--Barra de navegación-->
 	   <div class="navbar-fixed">
 		   <nav class="color-primario-obscuro">
-			   <a href="#" class="brand-logo center fuente1">LOBO-VIGIA</a>
+			   <a href="<?php echo(base_url());?>" class="brand-logo center fuente1">LOBO-VIGIA</a>
 		   </nav>
 	   </div>
 	   
@@ -117,6 +117,6 @@
 	   </script>
 	   
      <!--Import jQuery before materialize.js-->
-     <script type="text/javascript" src="./assets/materialize/js/materialize.min.js"></script>
+     <script type="text/javascript" src="<?php echo(base_url());?>assets/materialize/js/materialize.min.js"></script>
    </body>
 </html>

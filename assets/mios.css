@@ -84,8 +84,8 @@ label{
 .secondary-content{
 	color: #03A9F4;
 }
-html, body { 
-	height: 100%; margin: 0; padding: 0; }
 
-#map { 
-	height: 100%; }
+html, body   { 
+			height: 100%; margin: 0; padding: 0; }
+	#map { 
+			height: 100%; }			

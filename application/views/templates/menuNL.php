@@ -2,7 +2,7 @@
 		<div class="navbar-fixed">
 			<nav class="color-primario">
 			  <div class="nav-wrapper">
-				<a href="#!" class="brand-logo fuente1">LOBO-VIGIA</a>
+				<a href="<?php echo(base_url());?>" class="brand-logo fuente1">LOBO-VIGIA</a>
 				  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
 				  <li><a href="/app/perfil">Entrar</a></li>

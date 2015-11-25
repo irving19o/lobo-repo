@@ -25,8 +25,20 @@ class Principal extends CI_Controller {
 	
 		
 	}
-	public function mapa()
+	public function crearDelito()
 	{
-		$this->load->view('mapa');
+	
+		$url='Location: '.base_url().'login';
+		$this->load->view('templates/header');
+			if (isset($_SESSION['nombreDeUsuario']))
+		{
+			$this->load->view('crearDelito');	
+		}
+		else
+		
+		header($url);
+	
+	
+	
 	}
 }

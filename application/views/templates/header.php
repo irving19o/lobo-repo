@@ -4,9 +4,9 @@
 		<!--Import Google Icon Font-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="./assets/materialize/css/materialize.min.css"  media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo(base_url());?>assets/materialize/css/materialize.min.css"  media="screen,projection"/>
 		<!--Mis CSS-->
-		<link type="text/css" rel="stylesheet" href="./assets/mios.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="<?php echo(base_url());?>assets/mios.css" media="screen,projection"/>
 		
 		<!--GOOGLE FONTS-->
 		<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
