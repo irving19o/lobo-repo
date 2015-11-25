@@ -28,5 +28,6 @@ class Registro extends CI_Controller {
 	{
 		$this->load->model('Modelo');
 		$this->Modelo->inserta();
+		header("Location: https://lobo-irving19o.c9users.io/app/login " );
 	}
 }

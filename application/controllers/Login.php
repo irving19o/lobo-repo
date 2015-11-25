@@ -39,6 +39,7 @@ class Login extends CI_Controller {
 		
 		else {
 			echo "datos invalidos ";
+			header("Location: " . $_SERVER['HTTP_REFERER']);
 		}
 		
 	}

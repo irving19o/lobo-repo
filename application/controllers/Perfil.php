@@ -18,21 +18,30 @@ class Perfil extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	
+	 
 	public function index()
 	{
+		$url='Location: '.base_url().'login';
+		$this->load->model('Modelo');
+	
+		$data['misDenuncias']=$this->Modelo->get_misDenuncias();
+		$data['novedades']=$this->Modelo->get_novedades();
+		
 		if (isset($_SESSION['nombreDeUsuario'])) {
 		$this->load->view('templates/header');
-		$this->load->view('perfil');# code...
+		$this->load->view('perfil', $data);# code...
 		}
 		else
-		header('location: https://lobo-irving19o.c9users.io/app/login');
+		header($url);
 	}
 
 	public function logout()
 	{
+		$url='Location: '.base_url().'login';
 		
 		session_destroy();
-		header('location: https://lobo-irving19o.c9users.io/app/login');
+		header($url);
 	}
 
 

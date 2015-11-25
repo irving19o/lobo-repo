@@ -18,10 +18,44 @@ class Principal extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	 
+	 
+	public function __construct()
+        {
+                parent::__construct();
+                $this->load->model('Modelo');
+                $this->load->helper('url_helper');
+        }
+	 
+	public function index($id=13)
 	{
+	
+		$data['delito'] = $this->Modelo->get_delito($id);
+		$data['comentario'] = $this->Modelo->get_comentarios($id);
+		
+		if (empty($data['delito'])) {
+		show_404();
+		}
+		
 		$this->load->view('templates/header');
-		$this->load->view('principal');
+		$this->load->view('principal', $data);
+	
+		
+	}
+		 
+	public function muestra($id=null)
+	{
+		
+		$data['delito'] = $this->Modelo->get_delito($id);
+		$data['comentario'] = $this->Modelo->get_comentarios($id);
+		
+		if (empty($data['delito'])) {
+		show_404();
+		}
+		
+		$this->load->view('templates/header');
+		$this->load->view('principal', $data);
+		
 	
 		
 	}
@@ -40,5 +74,38 @@ class Principal extends CI_Controller {
 	
 	
 	
+	}
+	
+	public function add()
+	{
+		
+	
+		$valida=$this->Modelo->insertaDelito();
+		if ($valida==1)
+		{
+			echo "Se agrego tu delito ";
+		}
+		else
+		{
+			echo "hubo un error al agregar el delito ";
+		}
+		
+		
+	}
+	
+	public function nuevo_comentario()
+	{
+		$valida=$this->Modelo->inserta_comentario();
+		
+		if ($valida==1)
+		{
+			echo "Se agrego tu comentario ";
+			header("Location: " . $_SERVER['HTTP_REFERER']); 
+		}
+		else
+		{
+			echo "hubo un error al agregar el comentario ";
+		}
+		
 	}
 }
