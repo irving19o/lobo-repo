@@ -69,11 +69,16 @@
 						<div class="row">
 							<div class="card-panel color-primario-obscuro">
 								<div class="row">
+									
 									<ul class="collection">
-								<li class="collection-item dismissable"><div>Asalto a mano armada<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Asalto con arma blanca<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Robo a casa<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Homicidio<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+										<?php if (empty($misDenuncias)):?>
+									<li class="collection-item dismissable"><div>No Hay denuncias :( <br> Agrega una!! <a href="<?php echo base_url().'principal/crearDelito';?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+									<?php endif ?>
+									
+									
+								<?php foreach ($misDenuncias as $dato): ?>
+									<li class="collection-item dismissable"><div><?php echo $dato->tipoDelito.' ('.$dato->descripcionLarga.')'; ?><a href="<?php echo base_url().'principal/muestra/'.$dato->idDelito?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+								<?php endforeach; ?>
 							</ul>
 								</div>
 							</div>
@@ -84,10 +89,17 @@
 							<div class="card-panel color-primario-obscuro">
 								<div class="row">
 									<ul class="collection">
-								<li class="collection-item dismissable"><div>Asalto a OXXO<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Robo de laptop en ruta 29<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Asesinato en riña callejera<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-								<li class="collection-item dismissable"><div>Enamoramiento (se robaron mi corazón)<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+									
+										<?php if (empty($novedades)):?>
+									<li class="collection-item dismissable"><div>No hay novedades :( <br> Agrega una Denuncia!!! <a href="<?php echo base_url().'principal/crearDelito';?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+									<?php endif ?>
+									
+									
+									<?php foreach ($novedades as $dato): ?>
+									<li class="collection-item dismissable"><div><?php echo $dato->tipoDelito.' ('.$dato->descripcionLarga.')'; ?><a href="<?php echo base_url().'principal/muestra/'.$dato->idDelito?>" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+									<?php endforeach; ?>
+							
+								
 							</ul>
 								</div>
 							</div>

@@ -37,7 +37,7 @@
 						   <label for="sexo2">Femenino</label>
 						   <br/>
 						   <label for="fechaNacimiento">Fecha de Nacimiento</label>
-						   <input id="fechaNacimiento" type="date" name="fechaNacimiento"/>
+						   <input id="fechaNacimiento" type="date" name="fechaNacimiento" class="datepicker"/>
 						   <br/>
 						   <label for="correo">Correo electrónico</label>
 						   <input id="correo" type="email" ng-model="tuCorreo" name="correoElectronico" required/>
@@ -116,7 +116,16 @@
 		   });
 	   </script>
 	   
+	   
+	   
      <!--Import jQuery before materialize.js-->
      <script type="text/javascript" src="<?php echo(base_url());?>assets/materialize/js/materialize.min.js"></script>
+     <script>
+	   	$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 80 // Creates a dropdown of 15 years to control year
+  });
+      
+	   </script>
    </body>
 </html>

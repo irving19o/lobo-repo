@@ -84,6 +84,7 @@ class Principal extends CI_Controller {
 		if ($valida==1)
 		{
 			echo "Se agrego tu delito ";
+			header("Location: " . base_url()."perfil");
 		}
 		else
 		{
@@ -105,6 +106,7 @@ class Principal extends CI_Controller {
 		else
 		{
 			echo "hubo un error al agregar el comentario ";
+			header("Location: " . $_SERVER['HTTP_REFERER']);
 		}
 		
 	}

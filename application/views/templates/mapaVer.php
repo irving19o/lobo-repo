@@ -1,7 +1,6 @@
  <script type="text/javascript">
 var bandera = 0;
 var map;
-
 function initMap() 
 		{
   map = new google.maps.Map(document.getElementById('map'), {
@@ -10,10 +9,7 @@ function initMap()
   });
 	
 	var marker = new google.maps.Marker({
-		<?php if (isset($delito)):?>
-		position: {lat: <?php echo $delito[0]->lat;?>, lng: <?php echo $delito[0]->long;?>},
-	<?php endif;?>
-    
+    	position: {lat: 19.000376, lng: -98.200945},
     	map: map,
     	title: 'Hello World!'
 		//animation: google.maps.Animation.BOUNCE
@@ -56,10 +52,7 @@ google.maps.event.addListener(map, "click", function (event) {
 				});
 			
 		}
-
-	<?php if (isset($delito)):?>
-	initMap(<?php echo $delito[0]->lat;?>,<?php echo $delito[0]->long;?>);
-	<?php endif;?>
+		
 		function abanderado()
 		{
 			if(bandera==0)

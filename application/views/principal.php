@@ -5,6 +5,7 @@
 			height: 100%; margin: 0; padding: 0; }
 			
     	</style>
+    		 
     <?php include 'templates/mapa.php'?>
 
 	<?php 
@@ -14,8 +15,9 @@
 		include 'templates/menuNL.php';
 	}	?>
 	
+	<div style="height:100%;">
 
-	<div class="row contMapa">
+	<div class="row contMapa" style="height:100%;">
 	
 	 <div class="col s6 ">
 	 	<div class="row ">
@@ -25,8 +27,12 @@
 	 </div>
 	 
 	  <div class="col s6">
-	 	<?php include 'verDelito.php'?>
+	 	<?php include 'verDelito.php';
+	 
+	 	?>
+	 	
 	 </div>
+	</div>
 	</div>
 
 

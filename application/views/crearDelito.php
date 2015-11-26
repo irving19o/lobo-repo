@@ -28,7 +28,9 @@
 	  	<br>
 	  	<br>
 	  	<br>
+	  	
 	 	<?php include 'formularios/formularioDelito.php'?>
+	 <script type="text/javascript">	abanderado();</script>
 	 </div>
 	</div>
 

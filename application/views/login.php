@@ -7,7 +7,8 @@
 				<br/>
 			</div>
 			<div class="col s4 center">
-				<h1 id="logo" class="color-primario-texto center">LOBO-VIGIA</h1>
+				<a href="<?php echo(base_url())?>">
+				<h1 id="logo" class="color-primario-texto center">LOBO-VIGIA</h1></a>
 			</div>
 			<div class="col s4">
 				<br/>

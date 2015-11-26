@@ -78,16 +78,102 @@ class Modelo extends CI_Model {
 		
 
 		}
+		
+		
+	public function insertaDelito()
+	{
+		$this->idUsuario=$_SESSION["id"];
+		$this->tipoDelito=$this->input->post("tipoDelito");
+		$this->horaDelito=$this->input->post("horaDelito");
+		$this->fechaDelito=$this->input->post("fechaDelito");
+		$this->direccion=$this->input->post("direccion");
+		$this->descripcionPerpetuador=$this->input->post("descripcionPerpetuador");
+		$this->descripcionArma=$this->input->post("descripcionArma");
+		$this->descripcionLarga=$this->input->post("descripcionLarga");
+		$this->lat=$this->input->post("lat");
+		$this->long=$this->input->post("long");
+		
+		$this->db->insert('Delito ', $this);
+	
+		return 1;
+		
+		
+	}
+	
+
+	
 
 	public function get_novedades()
 	{
+		$this->db->select('tipoDelito, idDelito, descripcionLarga');
+		$this->db->from('Delito');
+		$query = $this->db->get();
+		
+		return $query->result();
+		
 
 	}
 
-	public function get_misDenuncias($id)
+	public function get_misDenuncias()
 	{
+		$this->db->select('tipoDelito, idDelito, descripcionLarga');
+		$this->db->from('Delito');
+		$this->db->where('idUsuario', $_SESSION['id']);
+		$query = $this->db->get();
+		
+		return $query->result();
 
 	}
+	
+	public function get_latLong()
+	{
+		$this->db->select(' idDelito, lat, long');
+		$this->db->from('Delito');
+	
+		$query = $this->db->get();
+		
+		return $query->result();
+		
+	}
+	
+	public function get_delito($id)
+	{
+		$this->db->select('*');
+		$this->db->from('Delito');
+		$this->db->where('idDelito', $id);
+	
+		$query = $this->db->get();
+	
+		return $query->result();
+		
+	}
+	
+		public function inserta_comentario()
+	{
+	;
+		$this->idUsuario=$_SESSION["id"];
+		$this->idDelito=$this->input->post("idDelito");
+		$this->comentario=$this->input->post("comentario");
+		
+		$this->db->insert('Comentario ', $this);
+	
+		return 1;
+		
+	}
+	
+		public function get_comentarios($id)
+	{
+		$this->db->select('comentario');
+		$this->db->from('Comentario');
+		$this->db->where('idDelito', $id);
+	
+		$query = $this->db->get();
+	
+		return $query->result();
+		
+	}
+	
+	
 
 
 
